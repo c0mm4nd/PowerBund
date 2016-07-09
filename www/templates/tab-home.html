@@ -1,0 +1,12 @@
+<link href="advanced-carousel.min.css" rel="stylesheet" />
+<script src="advanced-carousel.min.js"></script>
+<ion-view view-title="Home">
+  </ion-content>
+	<a-carousel
+	      item-directive="name-of-your-directive"
+	      carousel-options="::vm.carouselOptions"
+	      array-provider="::vm.carouselData"
+	      on-select="vm.onSelectCarousel(item)">
+	</a-carousel>
+  </ion-content>
+</ion-view>
