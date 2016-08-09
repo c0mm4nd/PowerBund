@@ -1,0 +1,19 @@
+<ion-view view-title="Login">
+    <ion-content class="padding">
+        <form id="login-form1" class="list ">
+            <ion-list id="login-list1" class=" " >
+                <label class="item item-input " id="login-input1">
+                    <span class="input-label">Phone</span>
+                    <input type="number" placeholder="" ng-model="login_data.phone">
+                </label>
+                <label class="item item-input " id="login-input2">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="login_data.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button id="login-button1" class=" button button-stable  button-block" ng-click="login()">Log in</button>
+            <a href="#" onclick="window.open('#/tab/signup', '_system', 'location=yes'); return false;" id="login-button2" class=" button button-positive  button-block button-clear ">Or create an account</a>
+        </form>
+    </ion-content>
+</ion-view>

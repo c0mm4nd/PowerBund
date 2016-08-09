@@ -1,0 +1,47 @@
+<ion-view view-title="Detail">
+  <ion-content class="padding">
+  	  <div class="content-block-title">{{list.city}} - {{list.title}}</div>
+  	  <div class="card">
+  	    <div class="card-header">详情</div>
+  	    <div class="card-content">
+  	      <div class="card-content-inner">
+  	      	<p>地址: {{list.address}}</p>
+  	        <p>营业时间:</p>
+  	        <p>高峰期</p>
+  	        <p>费用:</p>
+  	      </div>
+  	    </div>
+  	    <div class="card-footer">星级:★★★★★</div>
+  	  </div>
+  	  <div class="card">
+  	    <div class="card-header">实时</div>
+  	    <div class="card-content">
+  	      <div class="card-content-inner">
+  	        <p>快桩:{{list.quick_total}}</p>
+  	        <p>慢桩:{{list.common_total}}</p>
+  	      </div>
+  	    </div>
+  	  </div>
+  	  <div class="content-block">
+  	    <div class="row">
+  	      <div class="col-50"><a href="javascript:alert('敬请期待');" class="button button-big button-fill button-danger">我要预约</a></div>
+  	      <div class="col-50"><a  href="bdapp://map/direction?origin=latlng:34.264642646862,108.95108518068|name:我家&destination=大雁塔&mode=driving&region=西安&src=yourCompanyName|yourAppName" class="button button-big button-fill button-success">到这里去</a></div>
+  	    </div>
+  	  </div>
+      <!-- <p>bdapp://map/direction?origin=latlng:{{myPosition['lat'] + ',' + myPosition['lng']}}|123&destination=latlng:{{list.location}}|456&mode=driving&region={{list.city}}&src=PowerBund|PowerBund" </p> -->
+  	  <div class="content-block-title">用户评价</div>
+  	  <div class="card facebook-card">
+  	    <div class="card-header no-border">
+  	      <div class="facebook-avatar"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="34" height="34"></div>
+  	      <div class="facebook-name">夜萧</div>
+  	      <div class="facebook-date">星期一 3:47pm</div>
+  	    </div>
+  	    <div class="card-content"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="100%"></div>
+  	    <div class="card-footer no-border">
+  	      <a href="#" class="link">赞</a>
+  	      <a href="#" class="link">评论</a>
+  	      <a href="#" class="link">分享</a>
+  	    </div>
+  	  </div>
+  </ion-content>
+</ion-view>

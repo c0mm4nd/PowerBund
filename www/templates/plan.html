@@ -1,0 +1,32 @@
+<ion-view view-title="Plan" >
+  <ion-nav-title>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+    	<input type="search" placeholder="Search" ng-model="input.search"  ng-change="suggest(input.search)" id="suggestId">
+      </label>
+    </div>
+  </ion-nav-title>
+
+  </ion-content>
+  	
+	<div id="planmap" data-ng-init="loadPlanMap()" style="width: 100%;height: 50%;overflow: hidden;margin:0;font-family:"微软雅黑";"></div>
+	<div id='p-result'></div>
+	<ion-list >
+	  <ion-item ng-repeat="suggest in suggests">
+		找{{suggest.business}}？
+	  </ion-item>
+	</ion-list>
+
+	<button class="button button-full button-positive" ng-click="plan_minLength()">
+	  直接导航
+	</button>
+
+
+<!-- 	<div id="l-map"></div>
+	<div id="r-result">请输入:<input type="text" id="suggestId" size="20" value="百度" style="width:150px;" /></div>
+	<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div> -->
+
+
+  </ion-content>
+</ion-view>

@@ -1,4 +1,6 @@
-angular.module('starter.services', [])
+root_url = "http://bund.pw/api/index.php";
+
+angular.module('PowerBund.services', [])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -47,4 +49,42 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+.factory('POIs', function($http,$q) {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var POIs;
+
+  url = root_url + "/map/getLists" ;
+  getLists = "";
+
+  return {
+    all: function() {
+      var deferred = $q.defer();
+      $http.get(url)
+      .success(function (data, status) {
+          deferred.resolve(data);
+      })
+      .error(function (data, status) {
+          deferred.reject(data);
+      });
+      console.log(deferred.promise);
+      return deferred.promise;
+    }
+  };
+})
+.factory('Location',  function(){
+  return {
+    all: function() {
+      
+      return null;
+    }
+  };
+
+})
+
+
+
+
+;

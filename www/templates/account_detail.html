@@ -1,0 +1,80 @@
+<ion-view view-title="Account Detail">
+  <ion-content class="padding">
+<!--     <div class="list-block theme-dark afterLogin">
+      <ul>
+        <li class="item-content item-link">
+          <div class="item-media"><i class="icon icon-f7"></i></div>
+          <div class="item-inner">
+            <div class="item-title">姓名</div>
+            <div class="item-after">{{account.username}}</div>
+          </div>
+        </li>
+        <li class="item-content item-link">
+          <div class="item-media"><i class="icon icon-f7"></i></div>
+          <div class="item-inner">
+            <div class="item-title">手机</div>
+            <div class="item-after">{{account.username}}</div>
+          </div>
+        </li>
+        <li class="item-content item-link">
+          <div class="item-media"><i class="icon icon-f7"></i></div>
+          <div class="item-inner">
+            <div class="item-title">车型</div>
+            <div class="item-after">{{account.car_info}}</div>
+          </div>
+        </li>
+      </ul>
+    </div> -->
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="avatar.jpg">
+        <h2>Hi, {{account.username}}</h2>
+        <p>{{account.phone}}</p>
+        <p>{{account.car_info}}</p>
+
+      </div>
+
+      <div class="item item-image">
+        <img src="cover.jpg">
+      </div>
+
+<!--       <a class="item item-icon-left assertive" href="#">
+        <i class="icon ion-music-note"></i>
+        Start listening
+      </a> -->
+
+    </div>
+    <div class="list">
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-model-s"></i>
+          我的爱车
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-social-yen"></i>
+          能量币
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-star"></i>
+          收藏
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-paper-airplane"></i>
+          会员福利
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-help-circled"></i>
+          帮助
+        </a>
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-gear-b"></i>
+          设置
+        </a>
+    </div>
+    <div class="list">
+    	<button class="button button-full button-assertive" ng-click="logout()">
+    	  Log Out
+    	</button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+<ion-view view-title="Nearby" >
+  </ion-content>
+	<div id="nearmap" data-ng-init="loadNearMap()" style="width: 100%;height: 50%;overflow: hidden;margin:0;font-family:"微软雅黑";"></div>
+	<div id='p-result'></div>
+	<ion-list >
+	  <ion-item ng-repeat="list in lists" href="#/tab/home/{{list.id}}">
+		{{list.title}}
+	  </ion-item>
+	</ion-list>
+  </ion-content>
+</ion-view>

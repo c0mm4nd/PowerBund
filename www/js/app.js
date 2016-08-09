@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+var account;
+
+angular.module('PowerBund', ['ionic', 'PowerBund.controllers', 'PowerBund.services', 'ui.map', 'ngCordova', 'ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -14,7 +16,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -22,7 +23,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -39,7 +39,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   // Each tab has its own nav history stack:
-
   .state('tab.dash', {
     url: '/dash',
     views: {
@@ -49,7 +48,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
   .state('tab.home', {
     url: '/home',
     views: {
@@ -59,37 +57,99 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.forum', {
+      url: '/forum',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-forum': {
+          templateUrl: 'templates/tab-forum.html',
+          controller: 'ForumCtrl'
         }
       }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+  })
+  .state('tab.chat-detail', {
+      url: '/forum/:chatId',
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
         }
       }
-    })
-
+  })
   .state('tab.account', {
     url: '/account',
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller:  'AccountCtrl'
       }
     }
-  });
+  })
+  .state('tab.account-login', {
+    url: '/account/login',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  .state('tab.account-signup', {
+      url: '/account/signup',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/signup.html',
+          controller: 'SignUpCtrl'
+        }
+      }
+  })
+  .state('tab.home-plan', {
+      url: '/home/plan',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/plan.html',
+          controller: 'PlanCtrl',
+          cache:false
+        }
+      }
+  })
+  .state('tab.home-nearby', {
+      url: '/home/nearby',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/nearby.html',
+          controller: 'NearCtrl',
+          cache: false
+        }
+      }
+  })
+  .state('tab.home-poi_detail', {
+      url: '/home/:listId',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/poi_detail.html',
+          controller: 'POIDetailCtrl',
+          cache: false
+        }
+      }
+  })
+  .state('tab.account-detail', {
+      url: '/account/:token',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/account_detail.html',
+          controller: 'AccountDetailCtrl',
+          cache: false
+        }
+      }
+  })
+;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
 });
+
+
+
+
+
